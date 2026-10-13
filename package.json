@@ -1,0 +1,32 @@
+{
+  "name": "charge-once",
+  "version": "0.1.0",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "db:up": "docker compose up -d --wait",
+    "db:down": "docker compose down"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "Payments API that charges exactly once, even when clients retry. Idempotency keys with Redis, TypeScript, Fastify.",
+  "dependencies": {
+    "fastify": "^5.12.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}
